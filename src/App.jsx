@@ -1,7 +1,10 @@
-import { useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 
 import './App.css'
+import { Outlet } from 'react-router-dom'
+
+import Header from './components/Header'
 
 function App() {
  
@@ -9,7 +12,13 @@ function App() {
   return (
     <>
       
-       <h1 className="text-3xl text-red-600 font-bold">Hellow world</h1>
+       
+       {/* header */}
+
+       <Header></Header>
+       <Outlet></Outlet>
+       {/* footer */}
+   
       
     </>
   )
