@@ -28,14 +28,15 @@ const router = createBrowserRouter([
         path: 'books',
         element: <Books/>,
       },
+      {
+        path: 'about',
+        element: <About></About>,
+    
+      },
     ],
 
   },
-  {
-    path: 'about',
-    element: <About></About>,
-
-  },
+ 
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
