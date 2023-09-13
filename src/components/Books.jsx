@@ -1,9 +1,14 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import Book from './Book';
+import LoadingPage from './LoadingPage';
 
 const Books = () => {
     const { books } = useLoaderData();
+    const navigation = useNavigation()
+    if(navigation.state === 'loading'){
+          return <LoadingPage/>
+    }
 
     return (
         <div className='my-container'>

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
+import LoadingPage from './LoadingPage';
 
 const BookDetails = () => {
+    const navigation = useNavigation()
+    if(navigation.state === 'loading'){
+          return <LoadingPage/>
+    }
     const bookData = useLoaderData();
     const [fold, setFold] = useState(true)
-    console.log(bookData)
+
     const { image, title, desc, authors, publisher, year, rating, url, price } =
         bookData;
     return (
