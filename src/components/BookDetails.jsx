@@ -3,13 +3,16 @@ import { useLoaderData, useNavigation } from 'react-router-dom';
 import LoadingPage from './LoadingPage';
 
 const BookDetails = () => {
-    const navigation = useNavigation()
-    if(navigation.state === 'loading'){
-          return <LoadingPage/>
-    }
+    
     const bookData = useLoaderData();
     const [fold, setFold] = useState(true)
 
+    const navigation = useNavigation()
+    console.log(navigation.state);
+    
+    if(navigation.state === 'loading'){
+          return <LoadingPage/>
+    }
     const { image, title, desc, authors, publisher, year, rating, url, price } =
         bookData;
     return (
